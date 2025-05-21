@@ -64,11 +64,11 @@ else:
 	passwordsFile = input("[>] Enter Password File: ")
 
 print(f"""
-('-----------------------------------------------')
+-----------------------------------------------
 [*] Target URL: {targetURL}
 [*] Login File: {loginNamesFile}
 [*] Pass File: {passwordsFile}
-('-----------------------------------------------')
+-----------------------------------------------
 """)
 
 # Opening loginNamesFile and passwordsFile
