@@ -65,9 +65,9 @@ else:
 
 print(f"""
 -----------------------------------------------
-[*] Target URL: {targetURL}
-[*] Login File: {loginNamesFile}
-[*] Pass File: {passwordsFile}
+[*] Target URL: \033[42m{targetURL}\33[0m
+[*] Login File: \033[44m{loginNamesFile}\33[0m
+[*] Pass File:  \033[44m{passwordsFile}\33[0m
 -----------------------------------------------
 """)
 
