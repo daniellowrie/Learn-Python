@@ -5,10 +5,12 @@ Learn Python by building cybersecurity / hacky stuff. Context-based learning thr
 
 <br>
 <br>
+
 Watch the Video Series on my YouTube channel here > https://www.youtube.com/playlist?list=PLtZSO0mhEgPwKttFedr7cvUkN91QZy2gJ
 ====
 
 <br>
 <br>
+
 Download the bWAPP VM here > https://sourceforge.net/projects/bwapp/files/bee-box/
 ====
