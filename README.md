@@ -1,7 +1,8 @@
 # Learn-Python
 Learn Python by building cybersecurity / hacky stuff. Context-based learning through building projects
 ====
-![python for beginners(1)](https://github.com/user-attachments/assets/f69cf56d-adf2-4fd4-ba89-84e230c07ea5)
+![python for beginners(1)](https://github.com/user-attachments/assets/7e123ed5-ced9-41fe-802d-e954c08c9578)
+
 
 <br>
 <br>
