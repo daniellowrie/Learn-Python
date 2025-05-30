@@ -13,8 +13,6 @@ print("""
     Web App Brute Force Tool    
 --------------------------------""")
 
-myVar1 = ""
-
 def caseCheck(args):
 	match args[0]:
 		case '-u':
